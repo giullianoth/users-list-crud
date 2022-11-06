@@ -2,7 +2,7 @@
     @include containerFull;
 
     padding: 20px 0;
-    border-bottom: 1px solid $color-neutral-grayish-blue-3;
+    border-bottom: 1px solid $color-neutral-blue-1;
 
     &_content {
         @include flex(space-between, center, nowrap);
@@ -21,3 +21,5 @@
         }
     }
 }
+
+@import "header-dark";

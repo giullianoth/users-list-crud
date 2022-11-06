@@ -1,0 +1,56 @@
+.dark_theme {
+    .main_users {
+        @include containerFull;
+        margin-top: 40px;
+    
+        &_content {
+            &_selectall {
+                background-color: $color-neutral-grayish-blue-2;
+            }
+    
+            &_list {
+                &_user {
+                    &:hover, &.selected {
+                        background-color: $color-neutral-grayish-blue-4;
+                    }
+    
+                    &:nth-child(odd) {
+                        background-color: $color-neutral-grayish-blue-2;
+    
+                        &:hover, &.selected {
+                            background-color: $color-neutral-grayish-blue-4;
+                        }
+                    }
+                    
+                    &_level, &_status, &_actions {
+                        font-size: $font-size-small;
+                    }
+                    &_status {
+                        button {
+                            color: $color-neutral-grayish-blue-3;
+                            border-color: $color-neutral-grayish-blue-3;
+                        }
+    
+                        &.active {
+                            button {
+                                color: $color-neutral-grayish-blue-3;
+                            }
+                        }
+                    }
+    
+                    &_actions {
+                        button {
+                            &.edit {
+                                color: $color-white;
+                            }
+                        }
+                    }
+                }
+            }
+    
+            &_count {
+                background-color: $color-neutral-grayish-blue-2;
+            }
+        }
+    }
+}

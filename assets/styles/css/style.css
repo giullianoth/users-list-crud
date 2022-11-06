@@ -12,15 +12,23 @@ body {
   font-family: "Poppins", sans-serif;
   color: #484a53;
   background-color: #FFF;
+  transition: all 0.4s ease 0s;
 }
 body h1, body h2 {
   color: #232429;
+}
+body.dark_theme {
+  background-color: #232429;
+  color: #FFF;
+}
+body.dark_theme h1, body.dark_theme h2 {
+  color: #FFF;
 }
 
 .main_header {
   width: 100%;
   padding: 20px 0;
-  border-bottom: 1px solid #B4B7C1;
+  border-bottom: 1px solid #EDF3FF;
 }
 .main_header_content {
   display: flex;
@@ -40,6 +48,10 @@ body h1, body h2 {
   .main_header_content_title h1 {
     font-size: 1.4rem;
   }
+}
+
+.dark_theme .main_header {
+  border-color: #484a53;
 }
 
 .main_users {
@@ -130,6 +142,7 @@ body h1, body h2 {
   border-radius: 10px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
+  transition: all 0.4s ease 0s;
 }
 @media screen and (min-width: 900px) {
   .main_users_content_selectall {
@@ -343,11 +356,45 @@ body h1, body h2 {
   border-radius: 10px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
+  transition: all 0.4s ease 0s;
 }
 @media screen and (min-width: 900px) {
   .main_users_content_count {
     padding: 20px;
   }
+}
+
+.dark_theme .main_users {
+  width: 100%;
+  margin-top: 40px;
+}
+.dark_theme .main_users_content_selectall {
+  background-color: #484a53;
+}
+.dark_theme .main_users_content_list_user:hover, .dark_theme .main_users_content_list_user.selected {
+  background-color: #8D8F96;
+}
+.dark_theme .main_users_content_list_user:nth-child(odd) {
+  background-color: #484a53;
+}
+.dark_theme .main_users_content_list_user:nth-child(odd):hover, .dark_theme .main_users_content_list_user:nth-child(odd).selected {
+  background-color: #8D8F96;
+}
+.dark_theme .main_users_content_list_user_level, .dark_theme .main_users_content_list_user_status, .dark_theme .main_users_content_list_user_actions {
+  font-size: 0.8rem;
+}
+.dark_theme .main_users_content_list_user_status button {
+  color: #B4B7C1;
+  border-color: #B4B7C1;
+}
+.dark_theme .main_users_content_list_user_status.active button {
+  color: #B4B7C1;
+}
+.dark_theme .main_users_content_list_user_actions button.edit {
+  color: #FFF;
+}
+.dark_theme .main_users_content_count {
+  background-color: #484a53;
 }
 
 .main_footer {
@@ -369,4 +416,13 @@ body h1, body h2 {
 }
 .main_footer_content a:hover {
   text-decoration: underline;
+}
+
+.dark_theme .main_footer_content {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.dark_theme .main_footer_content a {
+  color: #FFF;
 }

@@ -55,6 +55,7 @@
             margin-bottom: 40px;
 
             @include borderRadius;
+            @include transition;
 
             @include setResponsiveDesign(900px) {
                 padding: 20px;
@@ -248,6 +249,7 @@
             margin: 40px 0;
 
             @include borderRadius;
+            @include transition;
 
             @include setResponsiveDesign(900px) {
                 padding: 20px;
@@ -255,3 +257,5 @@
         }
     }
 }
+
+@import "main-dark";

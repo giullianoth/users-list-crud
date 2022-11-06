@@ -1,0 +1,10 @@
+.dark_theme {
+    .main_footer {
+        &_content {
+            @include container;
+            a {
+                color: $color-white;
+            }
+        }
+    }
+}
