@@ -105,6 +105,9 @@ body h1, body h2 {
   align-items: center;
   flex-wrap: wrap;
 }
+.main_users_content_header_create button:hover {
+  background-color: #4D6B9B;
+}
 .main_users_content_header_create button i {
   margin-right: 10px;
 }
@@ -135,6 +138,7 @@ body h1, body h2 {
 }
 .main_users_content_selectall input {
   margin-right: 10px;
+  cursor: pointer;
 }
 .main_users_content_list {
   display: flex;
@@ -178,6 +182,9 @@ body h1, body h2 {
   .main_users_content_list_user_select {
     flex-basis: calc(3% - 20px);
   }
+}
+.main_users_content_list_user_select input {
+  cursor: pointer;
 }
 .main_users_content_list_user_photo {
   flex-basis: 50px;
@@ -276,6 +283,9 @@ body h1, body h2 {
   align-items: center;
   flex-wrap: nowrap;
 }
+.main_users_content_list_user_status button:hover {
+  background-color: #4D6B9B;
+}
 .main_users_content_list_user_status button i {
   margin-right: 10px;
 }
@@ -352,6 +362,7 @@ body h1, body h2 {
   text-decoration: none;
   color: #232429;
   font-size: inherit;
+  transition: all 0.4s ease 0s;
 }
 .main_footer_content a:hover {
   text-decoration: underline;

@@ -2,7 +2,8 @@
 $color-white: #FFF;
 
 //Light theme
-$color-primary-blue-1: #103C82;
+$color-primary-blue-1:       #103C82;
+$color-primary-blue-1-hover: #4D6B9B;
 
 $color-neutral-blue-1: #EDF3FF;
 $color-neutral-blue-2: #FAFBFF;
@@ -12,7 +13,7 @@ $color-neutral-grayish-blue-2: #484a53;
 $color-neutral-grayish-blue-3: #B4B7C1;
 
 $color-tertiary-success: #30D18D;
-$color-tertiary-error: #D14B30;
+$color-tertiary-error:   #D14B30;
 
 $color-background-light: $color-white;
 
@@ -22,7 +23,7 @@ $font-poppins: 'Poppins', sans-serif;
 $font-color-default: $color-neutral-grayish-blue-2;
 
 $font-size-default: 1rem;
-$font-size-big: 1.4rem;
+$font-size-big:   1.4rem;
 $font-size-small: 0.8rem;
 
 // CONTAINER PAGE WIDTH
@@ -33,4 +34,4 @@ $browsers-default: ("moz", "webkit");
 
 // BORDER RADIUS
 $radius-default: 10px;
-$radius-small: 5px;
+$radius-small:    5px;

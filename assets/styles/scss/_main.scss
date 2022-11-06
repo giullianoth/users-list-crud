@@ -62,6 +62,7 @@
 
             input {
                 margin-right: 10px;
+                cursor: pointer;
             }
         }
 
@@ -101,6 +102,10 @@
 
                     @include setResponsiveDesign(1024px) {
                         @include flexBasis(3%, 20px);
+                    }
+
+                    input {
+                        cursor: pointer;
                     }
                 }
 

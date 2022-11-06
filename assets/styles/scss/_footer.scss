@@ -12,6 +12,8 @@
             color: $color-neutral-grayish-blue-1;
             font-size: inherit;
 
+            @include transition;
+
             &:hover {
                 text-decoration: underline;
             }
