@@ -329,3 +329,23 @@ body h1, body h2 {
     padding: 20px;
   }
 }
+
+.main_footer {
+  width: 100%;
+}
+.main_footer_content {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+  font-size: 0.8rem;
+  text-align: center;
+  color: #B4B7C1;
+}
+.main_footer_content a {
+  text-decoration: none;
+  color: #232429;
+  font-size: inherit;
+}
+.main_footer_content a:hover {
+  text-decoration: underline;
+}
