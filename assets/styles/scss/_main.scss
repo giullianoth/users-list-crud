@@ -56,7 +56,7 @@
                 @include flex(flex-start);
                 @include borderRadius;
                 
-                column-gap: 20px;
+                gap: 10px;
                 padding: 20px 12px;
 
                 &:nth-child(odd) {
@@ -76,17 +76,19 @@
                     }
                 }
 
-                &_name {
-                    @include flex1;
-                    font-weight: 700;
-                    padding-left: 30px;
-                }
+                &_info {
+                    @include flexBasis(calc(100% - 20px - 60px), 20px);
+                    @include flex(flex-start);
 
-                &_email {
-                    @include flex1;
-                    font-size: $font-size-small;
-                    margin-bottom: 20px;
-                    padding-left: 30px;
+                    &_name {
+                        @include flex1;
+                        font-weight: 700;
+                    }
+    
+                    &_email {
+                        @include flex1;
+                        font-size: $font-size-small;
+                    }
                 }
 
                 &_level, &_status, &_actions {
@@ -139,6 +141,14 @@
                     }
                 }
             }
+        }
+
+        &_count {
+            padding: 20px 12px;
+            background-color: $color-neutral-blue-2;
+            margin: 40px 0;
+
+            @include borderRadius;
         }
     }
 }
