@@ -10,8 +10,16 @@
             row-gap: 20px;
             margin-bottom: 40px;
 
+            @include setResponsiveDesign(500px) {
+                row-gap: 0;
+            }
+
             &_title {
                 @include flex1;
+
+                @include setResponsiveDesign(500px) {
+                    @include flex2;
+                }
 
                 h2 {
                     font-size: $font-size-big;
@@ -20,6 +28,11 @@
 
             &_create {
                 @include flex1;
+
+                @include setResponsiveDesign(500px) {
+                    @include flex2;
+                    @include flex(flex-end);
+                }
 
                 button {
                     @include button;
@@ -43,6 +56,10 @@
 
             @include borderRadius;
 
+            @include setResponsiveDesign(900px) {
+                padding: 20px;
+            }
+
             input {
                 margin-right: 10px;
             }
@@ -59,16 +76,34 @@
                 gap: 10px;
                 padding: 20px 12px;
 
+                @include setResponsiveDesign(900px) {
+                    flex-wrap: nowrap;
+                    gap: 20px;
+                    padding: 20px;
+                }
+
                 &:nth-child(odd) {
                     background-color: $color-neutral-blue-2;
                 }
 
                 &_select {
-                    @include flexBasis(20px, 20px);
+                    @include flexBasis(20px, 10px);
+
+                    @include setResponsiveDesign(1024px) {
+                        @include flexBasis(3%, 20px);
+                    }
                 }
 
                 &_photo {
-                    @include flexBasis(60px, 20px);
+                    @include flexBasis(60px, 10px);
+
+                    @include setResponsiveDesign(900px) {
+                        @include flexBasis(100px, 20px);
+                    }
+
+                    @include setResponsiveDesign(1024px) {
+                        @include flexBasis(6%, 20px);
+                    }
 
                     img {
                         @include containerFull;
@@ -80,21 +115,52 @@
                     @include flexBasis(calc(100% - 20px - 60px), 10px);
                     @include flex(flex-start);
 
+                    @include setResponsiveDesign(900px) {
+                        flex-wrap: nowrap;
+                    }
+
+                    @include setResponsiveDesign(1024px) {
+                        @include flexBasis(60%, 20px);
+                    }
+
                     &_name {
                         @include flex1;
                         font-weight: 700;
+
+                        @include setResponsiveDesign(900px) {
+                            @include flex2;
+                        }
                     }
     
                     &_email {
                         @include flex1;
                         font-size: $font-size-small;
                         padding-bottom: 10px;
+
+                        @include setResponsiveDesign(900px) {
+                            @include flex2;
+                            padding-bottom: 0;
+                        }
                     }
                 }
 
                 &_level, &_status, &_actions {
                     @include flex3(10px);
                     font-size: $font-size-small;
+                }
+
+                &_level, &_status {
+                    @include setResponsiveDesign(500px) {
+                        @include flex4(10px);
+                    }
+
+                    @include setResponsiveDesign(900px) {
+                        @include flex3(10px);
+                    }
+
+                    @include setResponsiveDesign(1024px) {
+                        @include flexBasis(10%, 20px);
+                    }
                 }
 
                 &_status {
@@ -127,6 +193,18 @@
                     @include flex(flex-end);
                     column-gap: 20px;
 
+                    @include setResponsiveDesign(500px) {
+                        @include flex2(10px);
+                    }
+
+                    @include setResponsiveDesign(900px) {
+                        @include flex3(10px);
+                    }
+
+                    @include setResponsiveDesign(1024px) {
+                        @include flexBasis(10%, 20px);
+                    }
+
                     button {
                         background: none;
                         border: none;
@@ -151,6 +229,10 @@
             margin: 40px 0;
 
             @include borderRadius;
+
+            @include setResponsiveDesign(900px) {
+                padding: 20px;
+            }
         }
     }
 }
