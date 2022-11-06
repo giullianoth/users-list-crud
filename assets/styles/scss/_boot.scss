@@ -1,12 +1,17 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-size: $font-size-default;
+    
+    @include setBrowsers(box-sizing, border-box);
 }
 
 body {
     font-family: $font-poppins;
     color: $font-color-default;
     background-color: $color-background-light;
+
+    h1, h2 {
+        color: $color-neutral-grayish-blue-1;
+    }
 }

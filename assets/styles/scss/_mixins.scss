@@ -1,0 +1,58 @@
+// CONTAINER WIDTH
+@mixin container($maxWidth: $container-max-width) {
+    max-width: $maxWidth;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@mixin containerFull() {
+    width: 100%;
+}
+
+// BROWSERS
+@mixin setBrowsers($attr, $value, $browsers: $browsers-default) {
+    #{$attr}: #{$value};
+
+    @each $browser in $browsers {
+        -#{$browser}-#{$attr}: #{$value};
+    }
+}
+
+// BORDER RADIUS
+@mixin borderRadius($radius: $radius-default) {
+    @include setBrowsers(border-radius, $radius);
+}
+
+// FLEXBOX
+@mixin flex($justifyContent: center, $alignitems: center, $flexWrap: wrap) {
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: $alignitems;
+    flex-wrap: $flexWrap;
+}
+
+@mixin flexBasis($basis, $gap: 0) {
+    @if $gap !=0 {
+        flex-basis: calc($basis - $gap);
+    }
+
+    @else {
+        flex-basis: $basis;
+    }
+}
+
+@mixin flex1($gap: 0) {
+    @include flexBasis(100%, $gap);
+}
+
+@mixin flex2($gap: 0) {
+    @include flexBasis(calc(100% / 2), $gap);
+}
+
+@mixin flex3($gap: 0) {
+    @include flexBasis(calc(100% / 3), $gap);
+}
+
+@mixin flex4($gap: 0) {
+    @include flexBasis(calc(100% / 4), $gap);
+}

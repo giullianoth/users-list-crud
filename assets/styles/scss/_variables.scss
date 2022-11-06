@@ -1,4 +1,4 @@
-// Colors
+// COLORS
 //Light theme
 $color-primary-blue-1: #103C82;
 
@@ -14,7 +14,7 @@ $color-tertiary-error: #D14B30;
 
 $color-background-light: #FBFBFB;
 
-// Font
+// FONT
 $font-poppins: 'Poppins', sans-serif;
 
 $font-color-default: $color-neutral-grayish-blue-2;
@@ -22,3 +22,12 @@ $font-color-default: $color-neutral-grayish-blue-2;
 $font-size-default: 1rem;
 $font-size-big: 1.4rem;
 $font-size-small: 0.8rem;
+
+// CONTAINER PAGE WIDTH
+$container-max-width: 1300px;
+
+// BROWSER CORES
+$browsers-default: ("moz", "webkit");
+
+// BORDER RADIUS
+$radius-default: 10px;
