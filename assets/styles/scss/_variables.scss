@@ -1,4 +1,6 @@
 // COLORS
+$color-white: #FFF;
+
 //Light theme
 $color-primary-blue-1: #103C82;
 
@@ -12,7 +14,7 @@ $color-neutral-grayish-blue-3: #B4B7C1;
 $color-tertiary-success: #30D18D;
 $color-tertiary-error: #D14B30;
 
-$color-background-light: #FBFBFB;
+$color-background-light: $color-white;
 
 // FONT
 $font-poppins: 'Poppins', sans-serif;
@@ -31,3 +33,4 @@ $browsers-default: ("moz", "webkit");
 
 // BORDER RADIUS
 $radius-default: 10px;
+$radius-small: 5px;

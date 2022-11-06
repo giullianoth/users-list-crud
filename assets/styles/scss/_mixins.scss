@@ -23,6 +23,10 @@
     @include setBrowsers(border-radius, $radius);
 }
 
+@mixin rounded() {
+    @include borderRadius(100%);
+}
+
 // FLEXBOX
 @mixin flex($justifyContent: center, $alignitems: center, $flexWrap: wrap) {
     display: flex;
@@ -55,4 +59,28 @@
 
 @mixin flex4($gap: 0) {
     @include flexBasis(calc(100% / 4), $gap);
+}
+
+// TRANSITION
+@mixin transition($property: all, $duration: 0.4s, $timingFunction: ease, $delay: 0s) {
+    transition: $property $duration $timingFunction $delay;
+}
+
+// BUTTON
+@mixin button() {
+    display: inline-block;
+    border: none;
+    background-color: $color-primary-blue-1;
+    color: $color-white;
+    font-family: inherit;
+    font-size: $font-size-small;
+    padding: 12px 24px;
+    cursor: pointer;
+
+    @include borderRadius;
+    @include transition;
+
+    i {
+        margin-right: 10px;
+    }
 }
