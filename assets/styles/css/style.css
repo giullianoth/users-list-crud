@@ -153,6 +153,7 @@ body h1, body h2 {
   -webkit-border-radius: 10px;
   gap: 10px;
   padding: 20px 12px;
+  transition: all 0.4s ease 0s;
 }
 @media screen and (min-width: 900px) {
   .main_users_content_list_user {
@@ -161,8 +162,14 @@ body h1, body h2 {
     padding: 20px;
   }
 }
+.main_users_content_list_user:hover, .main_users_content_list_user.selected {
+  background-color: #EDF3FF;
+}
 .main_users_content_list_user:nth-child(odd) {
   background-color: #FAFBFF;
+}
+.main_users_content_list_user:nth-child(odd):hover, .main_users_content_list_user:nth-child(odd).selected {
+  background-color: #EDF3FF;
 }
 .main_users_content_list_user_select {
   flex-basis: 10px;

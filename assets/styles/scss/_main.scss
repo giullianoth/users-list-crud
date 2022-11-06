@@ -76,14 +76,24 @@
                 gap: 10px;
                 padding: 20px 12px;
 
+                @include transition;
+
                 @include setResponsiveDesign(900px) {
                     flex-wrap: nowrap;
                     gap: 20px;
                     padding: 20px;
                 }
 
+                &:hover, &.selected {
+                    background-color: $color-neutral-blue-1;
+                }
+
                 &:nth-child(odd) {
                     background-color: $color-neutral-blue-2;
+
+                    &:hover, &.selected {
+                        background-color: $color-neutral-blue-1;
+                    }
                 }
 
                 &_select {
