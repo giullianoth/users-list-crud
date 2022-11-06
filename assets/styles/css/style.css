@@ -34,6 +34,7 @@ body h1, body h2 {
 .main_header_content_title h1 {
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  font-weight: 400;
 }
 
 .main_users {
@@ -140,7 +141,7 @@ body h1, body h2 {
   -webkit-border-radius: 5px;
 }
 .main_users_content_list_user_info {
-  flex-basis: calc(100% - 20px - 60px - 20px);
+  flex-basis: calc(100% - 20px - 60px - 10px);
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -153,9 +154,10 @@ body h1, body h2 {
 .main_users_content_list_user_info_email {
   flex-basis: 100%;
   font-size: 0.8rem;
+  padding-bottom: 10px;
 }
 .main_users_content_list_user_level, .main_users_content_list_user_status, .main_users_content_list_user_actions {
-  flex-basis: calc(33.3333333333% - 20px);
+  flex-basis: calc(33.3333333333% - 10px);
   font-size: 0.8rem;
 }
 .main_users_content_list_user_status button {
@@ -204,6 +206,7 @@ body h1, body h2 {
   background: none;
   border: none;
   cursor: pointer;
+  font-size: 0.8rem;
 }
 .main_users_content_list_user_actions button.edit {
   color: #484a53;

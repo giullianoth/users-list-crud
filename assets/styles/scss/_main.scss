@@ -77,7 +77,7 @@
                 }
 
                 &_info {
-                    @include flexBasis(calc(100% - 20px - 60px), 20px);
+                    @include flexBasis(calc(100% - 20px - 60px), 10px);
                     @include flex(flex-start);
 
                     &_name {
@@ -88,11 +88,12 @@
                     &_email {
                         @include flex1;
                         font-size: $font-size-small;
+                        padding-bottom: 10px;
                     }
                 }
 
                 &_level, &_status, &_actions {
-                    @include flex3(20px);
+                    @include flex3(10px);
                     font-size: $font-size-small;
                 }
 
@@ -130,6 +131,7 @@
                         background: none;
                         border: none;
                         cursor: pointer;
+                        font-size: $font-size-small;
 
                         &.edit {
                             color: $color-neutral-grayish-blue-2;

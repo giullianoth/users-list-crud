@@ -84,3 +84,10 @@
         margin-right: 10px;
     }
 }
+
+// RESPONSIVE DESIGN - Mobile First
+@mixin setResponsiveDesign($screenWidth) {
+    @media screen and (min-width: $screenWidth) {
+        @content;
+    }
+}
