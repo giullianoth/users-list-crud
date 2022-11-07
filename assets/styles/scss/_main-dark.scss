@@ -9,6 +9,11 @@
             }
     
             &_list {
+                &_empty {
+                    background-color: $color-neutral-grayish-blue-2;
+                    color: $color-neutral-grayish-blue-3;
+                }
+
                 &_user {
                     &:hover, &.selected {
                         background-color: $color-neutral-grayish-blue-4;
