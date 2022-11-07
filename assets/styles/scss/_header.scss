@@ -28,6 +28,7 @@
                 cursor: pointer;
 
                 @include borderRadius(30px);
+                @include relative;
 
                 .switch {
                     width: 24px;
@@ -42,6 +43,43 @@
 
                     &.active {
                         transform: translateX(calc(100% + 6px));
+                    }
+
+                    i {
+                        font-size: $font-size-small;
+                    }
+                }
+
+                &_card {
+                    @include absolute(calc(100% + 14px), -3px);
+                    z-index: 2;
+                    width: 60px;
+                    height: 60px;
+                    display: none;
+
+                    @include transition;
+    
+                    &::before {
+                        content: "";
+                        width: 16px;
+                        height: 16px;
+                        background-color: $color-neutral-grayish-blue-1;
+
+                        @include absolute(-6px, 50%);
+                        transform: translateX(-50%) rotate(45deg);
+                        z-index: -1;
+                        
+                        @include transition;
+                    }
+
+                    .img {
+                        width: 100%;
+                        height: 100%;
+                        border: 3px solid $color-neutral-grayish-blue-1;
+    
+                        @include rounded;
+                        @include bgImage;
+                        @include transition;
                     }
                 }
             }

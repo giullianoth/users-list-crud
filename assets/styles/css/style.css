@@ -57,6 +57,7 @@ body.dark_theme h1, body.dark_theme h2 {
   border-radius: 30px;
   -moz-border-radius: 30px;
   -webkit-border-radius: 30px;
+  position: relative;
 }
 .main_header_content_theme_switch .switch {
   width: 24px;
@@ -76,6 +77,43 @@ body.dark_theme h1, body.dark_theme h2 {
 .main_header_content_theme_switch .switch.active {
   transform: translateX(calc(100% + 6px));
 }
+.main_header_content_theme_switch .switch i {
+  font-size: 0.8rem;
+}
+.main_header_content_theme_switch_card {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: -3px;
+  z-index: 2;
+  width: 60px;
+  height: 60px;
+  display: none;
+  transition: all 0.4s ease 0s;
+}
+.main_header_content_theme_switch_card::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-color: #232429;
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  z-index: -1;
+  transition: all 0.4s ease 0s;
+}
+.main_header_content_theme_switch_card .img {
+  width: 100%;
+  height: 100%;
+  border: 3px solid #232429;
+  border-radius: 100%;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  transition: all 0.4s ease 0s;
+}
 
 .dark_theme .main_header {
   border-color: #484A53;
@@ -87,6 +125,12 @@ body.dark_theme h1, body.dark_theme h2 {
   background-color: #FFF;
   color: #232429;
   border-color: #232429;
+}
+.dark_theme .main_header_content_theme_switch_card::before {
+  background-color: #FFF;
+}
+.dark_theme .main_header_content_theme_switch_card .img {
+  border-color: #FFF;
 }
 
 .main_users {

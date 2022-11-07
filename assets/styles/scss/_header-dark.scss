@@ -12,6 +12,16 @@
                         color: $color-background-dark;
                         border-color: $color-background-dark;
                     }
+
+                    &_card {
+                        &::before {
+                            background-color: $color-white;
+                        }
+    
+                        .img {
+                            border-color: $color-white;
+                        }
+                    }
                 }
             }
         }

@@ -66,6 +66,19 @@
     transition: $property $duration $timingFunction $delay;
 }
 
+// POSITION
+// Relative
+@mixin relative() {
+    position: relative;
+}
+
+// Absolute
+@mixin absolute($top: 0, $left: 0) {
+    position: absolute;
+    top: $top;
+    left: $left;
+}
+
 // BUTTON
 @mixin button() {
     display: inline-block;
@@ -87,6 +100,17 @@
     i {
         margin-right: 10px;
     }
+}
+
+// BACKGROUND IMAGE
+@mixin bgImage($image: "", $repeat: no-repeat, $size: cover, $position: center center) {
+    @if $image != "" {
+        background-image: url($image);
+    }
+
+    background-repeat: $repeat;
+    background-size: $size;
+    background-position: $position;
 }
 
 // RESPONSIVE DESIGN - Mobile First
