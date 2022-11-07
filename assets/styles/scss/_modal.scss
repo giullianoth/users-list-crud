@@ -1,6 +1,12 @@
 .main_modal {
     @include containerFull;
     height: 100%;
+    padding: {
+        top: 60px;
+        right: 20px;
+        bottom: 20px;
+        left: 20px;
+    };
 
     @include fixed;
     background-color: $color-black-modal;
@@ -44,7 +50,11 @@
             gap: 10px;
 
             label {
-                @include flex2(10px);
+                @include flex1;
+
+                @include setResponsiveDesign(600px) {
+                    @include flex2(10px);
+                }
 
                 input, select {
                     display: block;
@@ -72,3 +82,5 @@
         }
     }
 }
+
+@import "modal-dark";
