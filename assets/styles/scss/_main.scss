@@ -70,6 +70,21 @@
         &_list {
             @include flex(flex-start);
 
+            &_empty {
+                @include flex1;
+                padding: 20px 12px;
+                background-color: $color-neutral-blue-2;
+                color: $color-neutral-grayish-blue-3;
+                text-align: center;
+
+                @include borderRadius;
+                @include transition;
+
+                @include setResponsiveDesign(900px) {
+                    padding: 20px;
+                }
+            }
+
             &_user {
                 @include flex1;
                 @include flex(flex-start);

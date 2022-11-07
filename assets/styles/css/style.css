@@ -238,6 +238,22 @@ body.dark_theme h1, body.dark_theme h2 {
   align-items: center;
   flex-wrap: wrap;
 }
+.main_users_content_list_empty {
+  flex-basis: 100%;
+  padding: 20px 12px;
+  background-color: #FAFBFF;
+  color: #B4B7C1;
+  text-align: center;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  transition: all 0.4s ease 0s;
+}
+@media screen and (min-width: 900px) {
+  .main_users_content_list_empty {
+    padding: 20px;
+  }
+}
 .main_users_content_list_user {
   flex-basis: 100%;
   display: flex;
