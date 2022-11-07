@@ -1,5 +1,19 @@
 .dark_theme {
     .main_header {
         border-color: $color-neutral-grayish-blue-2;
+
+        &_content {
+            &_theme {
+                &_switch {
+                    border-color: $color-white;
+    
+                    .switch {
+                        background-color: $color-white;
+                        color: $color-background-dark;
+                        border-color: $color-background-dark;
+                    }
+                }
+            }
+        }
     }
 }

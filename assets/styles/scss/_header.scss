@@ -19,6 +19,33 @@
                 }
             }
         }
+
+        &_theme {
+            &_switch {
+                width: 60px;
+                height: 30px;
+                border: 3px solid $color-neutral-grayish-blue-1;
+                cursor: pointer;
+
+                @include borderRadius(30px);
+
+                .switch {
+                    width: 24px;
+                    height: 24px;
+                    background-color: $color-neutral-grayish-blue-1;
+                    color: $color-background-light;
+                    border: 1px solid $color-background-light;
+
+                    @include rounded;
+                    @include flex;
+                    @include transition;
+
+                    &.active {
+                        transform: translateX(calc(100% + 6px));
+                    }
+                }
+            }
+        }
     }
 }
 
