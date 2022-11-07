@@ -49,6 +49,7 @@ body.dark_theme h1, body.dark_theme h2 {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  display: none;
 }
 .main_modal_content {
   background-color: #EDF3FF;

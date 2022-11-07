@@ -8,6 +8,8 @@
 
     @include flex;
 
+    display: none;
+
     &_content {
         background-color: $color-neutral-blue-1;
         padding: 40px;
