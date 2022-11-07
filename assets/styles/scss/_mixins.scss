@@ -79,6 +79,13 @@
     left: $left;
 }
 
+// Fixed
+@mixin fixed($top: 0, $left: 0) {
+    position: fixed;
+    top: $top;
+    left: $left;
+}
+
 // BUTTON
 @mixin button() {
     display: inline-block;

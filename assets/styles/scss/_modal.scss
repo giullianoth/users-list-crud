@@ -1,0 +1,72 @@
+.main_modal {
+    @include containerFull;
+    height: 100%;
+
+    @include fixed;
+    background-color: $color-black-modal;
+    z-index: 20;
+
+    @include flex;
+
+    &_content {
+        background-color: $color-neutral-blue-1;
+        padding: 40px;
+
+        @include borderRadius;
+        @include relative;
+
+        @include flex;
+        flex-direction: column;
+
+        .close {
+            @include absolute(-40px, unset);
+            right: 0;
+            color: $color-white;
+            cursor: pointer;
+
+            i {
+                font-size: 1.8em;
+            }
+        }
+
+        &_title {
+            margin-bottom: 40px;
+
+            h2 {
+                font-size: $font-size-big;
+            }
+        }
+
+        &_form {
+            @include flex;
+            gap: 10px;
+
+            label {
+                @include flex2(10px);
+
+                input, select {
+                    display: block;
+                    width: 100%;
+
+                    &.error {
+                        border-color: $color-tertiary-error;
+                    }
+                }
+
+                .message {
+                    display: block;
+                    height: 20px;
+                    margin-top: 5px;
+                    font-size: $font-size-small;
+                    color: $color-tertiary-error;
+                }
+            }
+
+            button {
+                @include button;
+                font-size: $font-size-default;
+                margin-top: 40px;
+            }
+        }
+    }
+}

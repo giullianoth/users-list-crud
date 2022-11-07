@@ -10,6 +10,52 @@
     <link rel="stylesheet" href="assets/styles/css/style.css">
 </head>
 <body>
+    <section class="main_modal">
+        <div class="main_modal_content">
+            <div class="close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+            <header class="main_modal_content_title">
+                <h2>Novo usuário</h2>
+            </header>
+
+            <form action="" class="main_modal_content_form">
+                <label for="user_name">
+                    Nome:
+                    <input type="text" name="user_name" id="user_name" autocomplete="off">
+                    <span class="message"></span>
+                </label>
+
+                <label for="user_email">
+                    E-mail:
+                    <input type="email" name="user_email" id="user_email" autocomplete="off">
+                    <span class="message"></span>
+                </label>
+
+                <label for="user_level">
+                    Nível:
+                    <select name="user_level" id="user_level">
+                        <option value="Editor">Editor</option>
+                        <option value="Admin">Admin</option>
+                    </select>
+                    <span class="message"></span>
+                </label>
+
+                <label for="user_status">
+                    Status:
+                    <select name="user_status" id="user_status">
+                        <option value="Inativo">Inativo</option>
+                        <option value="Ativo">Ativo</option>
+                    </select>
+                    <span class="message"></span>
+                </label>
+
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </section>
+
     <header class="main_header">
         <div class="main_header_content">
             <div class="main_header_content_title">
@@ -51,10 +97,10 @@
                 </div>
 
                 <div class="main_users_content_list">
-                    <div class="main_users_content_list_empty">
+                    <!-- <div class="main_users_content_list_empty">
                         <p>Não há usuários cadastrados.</p>
-                    </div>
-                    <!-- <div class="main_users_content_list_user">
+                    </div> -->
+                    <div class="main_users_content_list_user">
                         <p class="main_users_content_list_user_select"><input type="checkbox" name="select" id="select" title="Selecionar este usuário"></p>
                         <p class="main_users_content_list_user_photo">
                             <img src="assets/images/upload/user.png" alt="user">
@@ -99,7 +145,7 @@
                             <button class="edit" title="Editar este usuário"><i class="fa-solid fa-pencil"></i></button>
                             <button class="delete" title="Excluir este usuário"><i class="fa-solid fa-trash-can"></i></button>
                         </p>
-                    </div> -->
+                    </div>
                 </div>
 
                 <div class="main_users_content_count">
