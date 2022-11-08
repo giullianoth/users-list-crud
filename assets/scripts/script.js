@@ -1,5 +1,8 @@
-import modal from "./modal.js";
-import switchTheme from "./switch-theme.js";
+import modal from "./theme/modal.js";
+import showUsers from "./theme/show-users.js";
+import switchTheme from "./theme/switch-theme.js";
+
+window.addEventListener("load", showUsers);
 
 switchTheme();
 
