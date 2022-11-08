@@ -1,3 +1,4 @@
+import form from "../app/form.js";
 import { fade } from "./effects.js";
 
 const modalWindow = document.querySelector(".j_modal");
@@ -10,6 +11,8 @@ const modal = () => {
     btnClose.addEventListener("click", () => {
         fade("out", modalWindow);
     })
+    
+    form();
 }
 
 export default modal;

@@ -4,22 +4,22 @@ const database = getDatabase();
 
 // CREATE
 const create = (data, id) => {
-    // set(ref(database, `users/${id}`), data)
-    //     .then(() => { console.log("Success"); })
-    //     .catch((error) => { console.log(error); })
+    set(ref(database, `users/${id}`), data)
+        .then(() => { console.log("Success"); })
+        .catch((error) => { console.log(error); })
 }
 
 // READ
 const read = () => {
-    let data;
     let dbRef = ref(database);
-    
-    get(child(dbRef, "users"))
-    .then((snapshot) => {
-        data = snapshot;
-    })
 
-    return data;
+    get(child(dbRef, "users"))
+        .then((snapshot) => {
+            return snapshot.toJSON();
+        })
+        .catch((error) => {
+            return error;
+        })
 }
 // UPDATE
 

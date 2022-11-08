@@ -1,6 +1,7 @@
 import users from "../app/users.js";
 
 const usersListArea = document.querySelector(".j_list");
+const createBtn = document.querySelector(".j_create");
 
 const createEmptyArea = () => {
     let empty = document.createElement("div");
@@ -30,13 +31,7 @@ const createUserElement = (data) => {
 }
 
 const showUsers = () => {
-    let usersList = /*users()*/[{
-        user_id: 1,
-        user_name: "Jane Cooper",
-        user_email: "janecooper@email.com",
-        user_level: "admin",
-        user_status: "active"
-    }];
+    let usersList = /*users()*/[];
     let emptyArea = document.querySelector(".j_empty");
 
     if (usersList.length) {
