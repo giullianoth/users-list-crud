@@ -1,12 +1,15 @@
 import { fade } from "../theme/effects.js";
+import formArea from "../theme/form-area.js";
 import showUsers from "../theme/show-users.js";
 import { create } from "./model.js";
 import userList from "./user-list.js";
 
-const formCreate = document.querySelector(".j_form");
-const modalWindow = document.querySelector(".j_modal");
-
 async function form() {
+
+    const formCreate = document.querySelector(".j_form");
+    const modalWindow = document.querySelector(".j_modal");
+    
+    formArea("Atualizar", userList[1]);
     formCreate.addEventListener("submit", async (event) => {
         event.preventDefault();
 

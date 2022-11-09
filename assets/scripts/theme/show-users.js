@@ -1,16 +1,12 @@
 import { read } from "../app/model.js";
 import userList from "../app/user-list.js";
+import formArea from "./form-area.js";
+import modal from "./modal.js";
+import triggerArea from "./trigger-area.js";
 
 const usersListArea = document.querySelector(".j_list");
+const modalArea = document.querySelector(".j_modal");
 const createBtn = document.querySelector(".j_create");
-
-const createEmptyArea = () => {
-    let empty = document.createElement("div");
-    empty.className = "main_users_content_list_empty j_empty";
-    empty.innerHTML = "<p>Não há usuários cadastrados.</p>";
-
-    return empty;
-}
 
 const createUserElement = (data) => {
     let user = document.createElement("div");
@@ -33,11 +29,15 @@ const createUserElement = (data) => {
 }
 
 async function showUsers() {
+    createBtn.addEventListener("click", () => {
+        modalArea.append(formArea("Cadastrar"));
+        modal();
+    });
 
     let emptyArea = document.querySelector(".j_empty");
 
     usersListArea.innerHTML = "";
-    
+
     while (userList.length) {
         userList.pop();
     }
@@ -57,7 +57,7 @@ async function showUsers() {
             usersListArea.appendChild(createUserElement(user));
         })
     } else {
-        usersListArea.appendChild(createEmptyArea());
+        usersListArea.appendChild(triggerArea("Não há usuários cadastrados."));
     }
 }
 
