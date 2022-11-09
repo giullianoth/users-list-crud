@@ -1,6 +1,4 @@
-import { child, get, ref, set, onValue, getDatabase } from "../firebase/connect.js";
-
-const database = getDatabase();
+import { child, get, ref, set, database } from "../firebase/connect.js";
 
 // CREATE
 const create = (data, id) => {
@@ -10,17 +8,21 @@ const create = (data, id) => {
 }
 
 // READ
-const read = () => {
+async function read() {
+    let data = null;
     let dbRef = ref(database);
 
-    get(child(dbRef, "users"))
+    await get(child(dbRef, "users"))
         .then((snapshot) => {
-            return snapshot.toJSON();
+            data = snapshot.val();
         })
         .catch((error) => {
-            return error;
+            data = error;
         })
+
+    return data;
 }
+
 // UPDATE
 
 // DELETE

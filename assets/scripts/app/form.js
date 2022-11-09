@@ -1,11 +1,13 @@
 import { fade } from "../theme/effects.js";
+import showUsers from "../theme/show-users.js";
 import { create } from "./model.js";
+import userList from "./user-list.js";
 
 const formCreate = document.querySelector(".j_form");
 const modalWindow = document.querySelector(".j_modal");
 
-const form = () => {
-    formCreate.addEventListener("submit", (event) => {
+async function form() {
+    formCreate.addEventListener("submit", async (event) => {
         event.preventDefault();
 
         let valid = true;
@@ -56,14 +58,27 @@ const form = () => {
         }
 
         if (valid) {
-            data.user_id = 2,
+
+            data.user_id = userList.length ? userList.length + 1 : 1;
             data.user_name = nameValue.value;
             data.user_email = emailValue.value;
             data.user_level = levelValue.value;
             data.user_status = statusValue.value;
 
-            create(data, 2);
+            nameValue.value = "";
+            emailValue.value = "";
+            levelValue.value = "Editor";
+            statusValue.value = "Inativo";
+
+            nameValue.classList.remove("error");
+            emailValue.classList.remove("error");
+            levelValue.classList.remove("error");
+            statusValue.classList.remove("error");
+
+            console.log(userList.length);
+            create(data, data.user_id);
             fade("out", modalWindow);
+            showUsers();
         }
 
         console.log(data);
