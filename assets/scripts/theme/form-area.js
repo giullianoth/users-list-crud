@@ -1,4 +1,4 @@
-const formArea = (action, data = null) => {
+const formArea = (action, title, data = null) => {
 
     let btnAction = action;
     let form = document.createElement("div");
@@ -6,7 +6,7 @@ const formArea = (action, data = null) => {
 
     form.innerHTML = `
         <div class="close" title="Fechar"><i class="fa-solid fa-xmark"></i></div>
-        <header class="main_modal_content_title"><h2>Novo usuário</h2></header>
+        <header class="main_modal_content_title"><h2>${title}</h2></header>
         <form action="" class="main_modal_content_form j_form">
         <label for="user_name">Nome:<input type="text" name="user_name" id="user_name" autocomplete="off" value="${data ? data.user_name : ""}"><span class="message"></span></label>
         <label for="user_email">E-mail:<input type="email" name="user_email" id="user_email" autocomplete="off" value="${data ? data.user_email : ""}"><span class="message"></span></label>

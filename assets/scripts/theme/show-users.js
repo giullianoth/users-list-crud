@@ -1,8 +1,9 @@
-import { read } from "../app/model.js";
+import { findById, read } from "../app/model.js";
 import userList from "../app/user-list.js";
 import formArea from "./form-area.js";
 import modal from "./modal.js";
 import triggerArea from "./trigger-area.js";
+import updateUser from "./update-user.js";
 
 const usersListArea = document.querySelector(".j_list");
 const modalArea = document.querySelector(".j_modal");
@@ -22,17 +23,13 @@ const createUserElement = (data) => {
         <div class="main_users_content_list_user_info"><p class="main_users_content_list_user_info_name">${data.user_name}</p><p class="main_users_content_list_user_info_email">${data.user_email}</p></div>
         <p class="main_users_content_list_user_level">${user_level}</p>
         <p class="${userStatusClass}"><button><i class="fa-solid fa-circle"></i> ${user_status}</button></p>
-        <p class="main_users_content_list_user_actions"><button class="edit" title="Editar este usuário"><i class="fa-solid fa-pencil"></i></button><button class="delete" title="Excluir este usuário"><i class="fa-solid fa-trash-can"></i></button></p>
+        <p class="main_users_content_list_user_actions"><button class="edit j_edit_user" title="Editar este usuário" data-id="${data.user_id}"><i class="fa-solid fa-pencil"></i></button><button class="delete" title="Excluir este usuário"><i class="fa-solid fa-trash-can"></i></button></p>
     `;
 
     return user;
 }
 
 async function showUsers() {
-    createBtn.addEventListener("click", () => {
-        modalArea.append(formArea("Cadastrar"));
-        modal();
-    });
 
     let emptyArea = document.querySelector(".j_empty");
 
@@ -59,6 +56,13 @@ async function showUsers() {
     } else {
         usersListArea.appendChild(triggerArea("Não há usuários cadastrados."));
     }
+
+    createBtn.addEventListener("click", () => {
+        modalArea.append(formArea("Cadastrar", "Novo usuário"));
+        modal();
+    });
+
+    updateUser();
 }
 
 export default showUsers;

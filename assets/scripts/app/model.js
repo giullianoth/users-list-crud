@@ -23,8 +23,25 @@ async function read() {
     return data;
 }
 
+async function findById(id) {
+    let data = null;
+    let dbRef = ref(database);
+
+    await get(child(dbRef, `users/${id}`))
+        .then((snapshot) => {
+            if (snapshot.exists()) {
+                data = snapshot.val();
+            }
+        })
+        .catch((error) => {
+            data = error;
+        })
+
+    return data;
+}
+
 // UPDATE
 
 // DELETE
 
-export { create, read };
+export { create, read, findById };
