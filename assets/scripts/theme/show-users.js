@@ -32,6 +32,7 @@ const createUserElement = (data) => {
 async function showUsers() {
 
     let emptyArea = document.querySelector(".j_empty");
+    let countArea = document.querySelector(".j_count");
 
     usersListArea.innerHTML = "";
 
@@ -63,6 +64,8 @@ async function showUsers() {
         modalArea.append(formArea("create", "Novo usuário"));
         modal();
     });
+
+    countArea.innerText = `${userList.length} ${userList.length > 1 ? "usuários" : "usuário"}`;
 
     updateUser();
 }
