@@ -18,7 +18,7 @@ async function updateUser() {
                     user = data;
                 })
 
-                modalArea.append(formArea("Atualizar", `Atualizar perfil de ${user.user_name}`, user));
+                modalArea.append(formArea("update", `Atualizar perfil de ${user.user_name}`, user));
                 modal();
             })
         })

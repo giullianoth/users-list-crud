@@ -43,6 +43,8 @@ async function showUsers() {
         data.forEach((item) => {
             userList.push(item);
         })
+    }).catch((error) => {
+        console.log(error);
     })
 
     if (userList.length) {
@@ -58,7 +60,7 @@ async function showUsers() {
     }
 
     createBtn.addEventListener("click", () => {
-        modalArea.append(formArea("Cadastrar", "Novo usuário"));
+        modalArea.append(formArea("create", "Novo usuário"));
         modal();
     });
 

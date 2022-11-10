@@ -1,8 +1,18 @@
 const formArea = (action, title, data = null) => {
 
-    let btnAction = action;
     let form = document.createElement("div");
     form.className = "main_modal_content";
+
+    let btnActionValue;
+
+    if (action === "create") {
+        btnActionValue = "Cadastrar";
+    } else if (action === "update") {
+        btnActionValue = "Atualizar";
+    } else {
+        console.error(`Action '${action}' is not accepted.`);
+        return null;
+    }
 
     form.innerHTML = `
         <div class="close" title="Fechar"><i class="fa-solid fa-xmark"></i></div>
@@ -12,7 +22,8 @@ const formArea = (action, title, data = null) => {
         <label for="user_email">E-mail:<input type="email" name="user_email" id="user_email" autocomplete="off" value="${data ? data.user_email : ""}"><span class="message"></span></label>
         <label for="user_level">Nível:<select name="user_level" id="user_level"><option value="editor"${data && data.user_level === "editor" ? " selected" : ""}>Editor</option><option value="admin"${data && data.user_level === "admin" ? " selected" : ""}>Admin</option></select><span class="message"></span></label>
         <label for="user_status">Status:<select name="user_status" id="user_status"><option value="inactive"${data && data.user_status === "inactive" ? " selected" : ""}>Inativo</option><option value="active"${data && data.user_status === "active" ? " selected" : ""}>Ativo</option></select><span class="message"></span></label>
-        <button type="submit">${btnAction}</button>
+        <input type="hidden" id="user_id" name="user_id" value="${data ? data.user_id : ""}">
+        <button type="submit" data-action="${action}">${btnActionValue}</button>
         </form>
     `;
 
