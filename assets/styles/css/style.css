@@ -403,6 +403,7 @@ body.dark_theme h1, body.dark_theme h2 {
   padding: 20px 12px;
   background-color: #FAFBFF;
   margin-bottom: 40px;
+  box-shadow: 0 0 10px rgba(101, 101, 101, 0.5);
   border-radius: 10px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -422,6 +423,11 @@ body.dark_theme h1, body.dark_theme h2 {
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(101, 101, 101, 0.5);
 }
 .main_users_content_list_empty {
   flex-basis: 100%;
@@ -445,9 +451,6 @@ body.dark_theme h1, body.dark_theme h2 {
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
-  border-radius: 10px;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
   gap: 10px;
   padding: 20px 12px;
   transition: all 0.4s ease 0s;
@@ -633,6 +636,7 @@ body.dark_theme h1, body.dark_theme h2 {
   padding: 20px 12px;
   background-color: #FAFBFF;
   margin: 40px 0;
+  box-shadow: 0 0 10px rgba(101, 101, 101, 0.5);
   border-radius: 10px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -683,6 +687,7 @@ body.dark_theme h1, body.dark_theme h2 {
 
 .main_footer {
   width: 100%;
+  padding: 20px 0;
 }
 .main_footer_content {
   max-width: 1300px;

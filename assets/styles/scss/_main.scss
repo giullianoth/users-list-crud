@@ -53,6 +53,7 @@
             padding: 20px 12px;
             background-color: $color-neutral-blue-2;
             margin-bottom: 40px;
+            box-shadow: 0 0 10px $color-gray-shadow;
 
             @include borderRadius;
             @include transition;
@@ -69,6 +70,9 @@
 
         &_list {
             @include flex(flex-start);
+            @include borderRadius;
+            overflow: hidden;
+            box-shadow: 0 0 10px $color-gray-shadow;
 
             &_empty {
                 @include flex1;
@@ -88,7 +92,6 @@
             &_user {
                 @include flex1;
                 @include flex(flex-start);
-                @include borderRadius;
                 
                 gap: 10px;
                 padding: 20px 12px;
@@ -262,6 +265,7 @@
             padding: 20px 12px;
             background-color: $color-neutral-blue-2;
             margin: 40px 0;
+            box-shadow: 0 0 10px $color-gray-shadow;
 
             @include borderRadius;
             @include transition;

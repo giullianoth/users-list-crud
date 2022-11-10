@@ -1,5 +1,6 @@
 .main_footer {
     @include containerFull;
+    padding: 20px 0;
 
     &_content {
         @include container;
