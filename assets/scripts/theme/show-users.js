@@ -8,6 +8,7 @@ import updateUser from "./update-user.js";
 import form from "../app/form.js";
 import loadingScreen from "./loading.js";
 import createUser from "./create-user.js";
+import selectUser from "./select-user.js";
 
 const usersListArea = document.querySelector(".j_list");
 const createBtn = document.querySelector(".j_create");
@@ -21,7 +22,7 @@ const createUserElement = (data) => {
     let userStatusClass = data.user_status === "active" ? "main_users_content_list_user_status active" : "main_users_content_list_user_status";
 
     user.innerHTML = `
-        <p class="main_users_content_list_user_select"><input type="checkbox" name="select_${data.user_id}" id="select_${data.user_id}" title="Selecionar este usuário"></p>
+        <p class="main_users_content_list_user_select"><input type="checkbox" name="select_${data.user_id}" id="select_${data.user_id}" data-id="${data.user_id}" title="Selecionar este usuário" class="j_select"></p>
         <p class="main_users_content_list_user_photo"><img src="assets/images/upload/user.png" alt="user"></p>
         <div class="main_users_content_list_user_info"><p class="main_users_content_list_user_info_name">${data.user_name}</p><p class="main_users_content_list_user_info_email">${data.user_email}</p></div>
         <p class="main_users_content_list_user_level">${user_level}</p>
@@ -44,8 +45,6 @@ async function showUsers() {
     }
 
     createBtn.addEventListener("click", createUser);
-
-    console.log(triggerArea(loadingScreen().outerHTML));
 
     await read().then((data) => {
         data.forEach((item) => {
@@ -73,6 +72,7 @@ async function showUsers() {
         ? "Vazio"
         : `${userList.length} ${userList.length > 1 ? "usuários" : "usuário"}`;
 
+    selectUser();
     updateUser();
     deleteUser();
 }

@@ -64,8 +64,6 @@ const deleteUser = async () => {
                 del(user);
                 await reorderList();
 
-                showUsers();
-
                 fade("out", modalArea);
                 setTimeout(() => {
                     modalArea.innerHTML = "";
