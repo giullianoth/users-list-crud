@@ -1,4 +1,4 @@
-import { del, findById, read } from "../app/model.js";
+import { del, findById, read, updt } from "../app/model.js";
 import modal from "./modal.js";
 import { fade } from "./effects.js";
 import showUsers from "./show-users.js";
@@ -23,8 +23,13 @@ const reorderList = async() => {
             user_status: user.user_status
         }
 
+        del(user);
+        updt(reorder);
+
         console.log(reorder);
     })
+
+    showUsers();
 
     console.log(users);
 }
