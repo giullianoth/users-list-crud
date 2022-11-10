@@ -648,10 +648,6 @@ body.dark_theme h1, body.dark_theme h2 {
   }
 }
 
-.dark_theme .main_users {
-  width: 100%;
-  margin-top: 40px;
-}
 .dark_theme .main_users_content_selectall {
   background-color: #484A53;
 }
@@ -667,9 +663,6 @@ body.dark_theme h1, body.dark_theme h2 {
 }
 .dark_theme .main_users_content_list_user:nth-child(odd):hover, .dark_theme .main_users_content_list_user:nth-child(odd).selected {
   background-color: #8D8F96;
-}
-.dark_theme .main_users_content_list_user_level, .dark_theme .main_users_content_list_user_status, .dark_theme .main_users_content_list_user_actions {
-  font-size: 0.8rem;
 }
 .dark_theme .main_users_content_list_user_status button {
   color: #B4B7C1;

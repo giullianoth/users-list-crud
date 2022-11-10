@@ -1,8 +1,5 @@
 .dark_theme {
     .main_users {
-        @include containerFull;
-        margin-top: 40px;
-    
         &_content {
             &_selectall {
                 background-color: $color-neutral-grayish-blue-2;
@@ -27,9 +24,6 @@
                         }
                     }
                     
-                    &_level, &_status, &_actions {
-                        font-size: $font-size-small;
-                    }
                     &_status {
                         button {
                             color: $color-neutral-grayish-blue-3;
