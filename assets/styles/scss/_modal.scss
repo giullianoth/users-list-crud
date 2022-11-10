@@ -80,6 +80,20 @@
                 margin-top: 40px;
             }
         }
+
+        .confirm, .back {
+            @include button;
+            margin-top: 40px;
+            font-size: $font-size-default;
+        }
+
+        .confirm {
+            background-color: $color-tertiary-error;
+
+            &:hover {
+                background-color: $color-tertiary-error;
+            }
+        }
     }
 }
 

@@ -136,6 +136,34 @@ body.dark_theme h1, body.dark_theme h2 {
 .main_modal_content_form button i {
   margin-right: 10px;
 }
+.main_modal_content .confirm, .main_modal_content .back {
+  display: inline-block;
+  border: none;
+  background-color: #103C82;
+  color: #FFF;
+  font-family: inherit;
+  font-size: 0.8rem;
+  padding: 12px 24px;
+  cursor: pointer;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  transition: all 0.4s ease 0s;
+  margin-top: 40px;
+  font-size: 1rem;
+}
+.main_modal_content .confirm:hover, .main_modal_content .back:hover {
+  background-color: #4D6B9B;
+}
+.main_modal_content .confirm i, .main_modal_content .back i {
+  margin-right: 10px;
+}
+.main_modal_content .confirm {
+  background-color: #D14B30;
+}
+.main_modal_content .confirm:hover {
+  background-color: #D14B30;
+}
 
 .dark_theme .main_modal_content {
   background-color: #484A53;

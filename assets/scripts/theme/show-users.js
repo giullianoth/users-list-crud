@@ -1,5 +1,6 @@
-import { findById, read } from "../app/model.js";
+import { read } from "../app/model.js";
 import userList from "../app/user-list.js";
+import deleteUser from "./delete-user.js";
 import formArea from "./form-area.js";
 import modal from "./modal.js";
 import triggerArea from "./trigger-area.js";
@@ -23,7 +24,7 @@ const createUserElement = (data) => {
         <div class="main_users_content_list_user_info"><p class="main_users_content_list_user_info_name">${data.user_name}</p><p class="main_users_content_list_user_info_email">${data.user_email}</p></div>
         <p class="main_users_content_list_user_level">${user_level}</p>
         <p class="${userStatusClass}"><button><i class="fa-solid fa-circle"></i> ${user_status}</button></p>
-        <p class="main_users_content_list_user_actions"><button class="edit j_edit_user" title="Editar este usuário" data-id="${data.user_id}"><i class="fa-solid fa-pencil"></i></button><button class="delete" title="Excluir este usuário"><i class="fa-solid fa-trash-can"></i></button></p>
+        <p class="main_users_content_list_user_actions"><button class="edit j_edit_user" title="Editar este usuário" data-id="${data.user_id}"><i class="fa-solid fa-pencil"></i></button><button class="delete j_delete_user" title="Excluir este usuário" data-id="${data.user_id}"><i class="fa-solid fa-trash-can"></i></button></p>
     `;
 
     return user;
@@ -65,9 +66,12 @@ async function showUsers() {
         usersListArea.appendChild(triggerArea("Não há usuários cadastrados."));
     }
 
-    countArea.innerText = `${userList.length} ${userList.length > 1 ? "usuários" : "usuário"}`;
+    countArea.innerText = userList.length === 0
+        ? "Vazio"
+        : `${userList.length} ${userList.length > 1 ? "usuários" : "usuário"}`;
 
     updateUser();
+    deleteUser();
 }
 
 export default showUsers;

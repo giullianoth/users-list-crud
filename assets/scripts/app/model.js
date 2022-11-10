@@ -1,4 +1,4 @@
-import { child, get, ref, set, database } from "../firebase/connect.js";
+import { child, get, ref, set, update, remove, database } from "../firebase/connect.js";
 
 // CREATE
 const create = (data) => {
@@ -41,12 +41,17 @@ async function findById(id) {
 }
 
 // UPDATE
-const update = (data) => {
-    set(ref(database, `users/${data.user_id}`), data)
+const updt = (data) => {
+    update(ref(database, `users/${data.user_id}`), data)
         .then(() => { console.log("Success"); })
         .catch((error) => { console.log(error); })
 }
 
 // DELETE
+const del = (data) => {
+    remove(ref(database, `users/${data.user_id}`))
+        .then(() => { console.log("Success"); })
+        .catch((error) => { console.log(error); })
+}
 
-export { create, read, findById, update };
+export { create, read, findById, updt, del };
