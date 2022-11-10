@@ -40,6 +40,11 @@ async function showUsers() {
         userList.pop();
     }
 
+    createBtn.addEventListener("click", () => {
+        modalArea.append(formArea("create", "Novo usuário"));
+        modal();
+    });
+
     await read().then((data) => {
         data.forEach((item) => {
             userList.push(item);
@@ -59,11 +64,6 @@ async function showUsers() {
     } else {
         usersListArea.appendChild(triggerArea("Não há usuários cadastrados."));
     }
-
-    createBtn.addEventListener("click", () => {
-        modalArea.append(formArea("create", "Novo usuário"));
-        modal();
-    });
 
     countArea.innerText = `${userList.length} ${userList.length > 1 ? "usuários" : "usuário"}`;
 
