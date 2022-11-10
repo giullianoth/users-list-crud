@@ -87,9 +87,11 @@ async function form() {
                 update(data);
             }
 
-            console.log(data);
-            
             fade("out", modalWindow);
+            setTimeout(() => {
+                modalWindow.innerHTML = "";
+            }, 600);
+
             showUsers();
         }
     })
