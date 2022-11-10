@@ -29,6 +29,7 @@ const fade = (mode, element, displayElement = "block") => {
         setTimeout(() => {
             element.style.transition = "";
             element.style.display = "";
+            element.style.opacity = "";
         }, timeAnimation);
         
     } else {

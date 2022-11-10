@@ -16,8 +16,7 @@ async function form() {
             let data = {};
     
             let action = formCreate.querySelector("button").dataset.action;
-            console.log(action);
-    
+            
             let nameValue = formCreate.querySelector("#user_name");
             let emailValue = formCreate.querySelector("#user_email");
             let levelValue = formCreate.querySelector("#user_level");
@@ -92,7 +91,7 @@ async function form() {
                 fade("out", modalWindow);
                 setTimeout(() => {
                     modalWindow.innerHTML = "";
-                }, 600);
+                }, 400);
     
                 showUsers();
             }

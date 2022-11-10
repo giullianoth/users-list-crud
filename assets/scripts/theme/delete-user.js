@@ -25,13 +25,7 @@ const reorderList = async() => {
 
         del(user);
         updt(reorder);
-
-        console.log(reorder);
     })
-
-    showUsers();
-
-    console.log(users);
 }
 
 const deleteUser = async () => {
@@ -59,13 +53,11 @@ const deleteUser = async () => {
             let btnConfirm = modalArea.querySelector(".confirm");
             let btnBack = modalArea.querySelector(".back");
 
-            console.log(btnConfirm, btnBack);
-
             btnBack.addEventListener("click", () => {
                 fade("out", modalArea);
                 setTimeout(() => {
                     modalArea.innerHTML = "";
-                }, 600);
+                }, 400);
             })
 
             btnConfirm.addEventListener("click", async () => {
@@ -77,7 +69,9 @@ const deleteUser = async () => {
                 fade("out", modalArea);
                 setTimeout(() => {
                     modalArea.innerHTML = "";
-                }, 600);
+                }, 400);
+                
+                showUsers();
             })
         })
     })

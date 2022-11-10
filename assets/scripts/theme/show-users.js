@@ -5,9 +5,11 @@ import formArea from "./form-area.js";
 import modal from "./modal.js";
 import triggerArea from "./trigger-area.js";
 import updateUser from "./update-user.js";
+import form from "../app/form.js";
+import loadingScreen from "./loading.js";
+import createUser from "./create-user.js";
 
 const usersListArea = document.querySelector(".j_list");
-const modalArea = document.querySelector(".j_modal");
 const createBtn = document.querySelector(".j_create");
 
 const createUserElement = (data) => {
@@ -19,7 +21,7 @@ const createUserElement = (data) => {
     let userStatusClass = data.user_status === "active" ? "main_users_content_list_user_status active" : "main_users_content_list_user_status";
 
     user.innerHTML = `
-        <p class="main_users_content_list_user_select"><input type="checkbox" name="select_${data.user_id}" id="select" title="Selecionar este usuário"></p>
+        <p class="main_users_content_list_user_select"><input type="checkbox" name="select_${data.user_id}" id="select_${data.user_id}" title="Selecionar este usuário"></p>
         <p class="main_users_content_list_user_photo"><img src="assets/images/upload/user.png" alt="user"></p>
         <div class="main_users_content_list_user_info"><p class="main_users_content_list_user_info_name">${data.user_name}</p><p class="main_users_content_list_user_info_email">${data.user_email}</p></div>
         <p class="main_users_content_list_user_level">${user_level}</p>
@@ -35,16 +37,15 @@ async function showUsers() {
     let emptyArea = document.querySelector(".j_empty");
     let countArea = document.querySelector(".j_count");
 
-    usersListArea.innerHTML = "";
+    usersListArea.innerHTML = triggerArea(loadingScreen().outerHTML).outerHTML;
 
     while (userList.length) {
         userList.pop();
     }
 
-    createBtn.addEventListener("click", () => {
-        modalArea.append(formArea("create", "Novo usuário"));
-        modal();
-    });
+    createBtn.addEventListener("click", createUser);
+
+    console.log(triggerArea(loadingScreen().outerHTML));
 
     await read().then((data) => {
         data.forEach((item) => {
@@ -52,6 +53,8 @@ async function showUsers() {
         })
     }).catch((error) => {
         console.log(error);
+    }).finally(() => {
+        usersListArea.querySelector(".loading").parentNode.remove();
     })
 
     if (userList.length) {

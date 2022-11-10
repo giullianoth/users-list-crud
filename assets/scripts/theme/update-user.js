@@ -1,3 +1,4 @@
+import form from "../app/form.js";
 import { findById } from "../app/model.js";
 import formArea from "./form-area.js";
 import modal from "./modal.js";
@@ -20,6 +21,7 @@ async function updateUser() {
 
                 modalArea.append(formArea("update", `Atualizar perfil de ${user.user_name}`, user));
                 modal();
+                form();
             })
         })
     }

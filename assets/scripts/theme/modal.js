@@ -1,4 +1,3 @@
-import form from "../app/form.js";
 import { fade } from "./effects.js";
 
 const modal = () => {
@@ -13,11 +12,9 @@ const modal = () => {
             fade("out", modalWindow);
             setTimeout(() => {
                 modalWindow.innerHTML = "";
-            }, 600);
+            }, 400);
         })
     }
-    
-    form();
 }
 
 export default modal;

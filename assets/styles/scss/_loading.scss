@@ -1,0 +1,28 @@
+/* Loading Bars */
+.loading {
+    @include flex;
+    @include transition;
+    @include containerFull;
+
+    gap: 5px;
+
+    &_bar {
+        width: 10px;
+        height: 10px;
+
+        background-color: $color-neutral-grayish-blue-2;
+
+        @for $i from 1 through 3 {
+            &.bar_#{$i} {
+                animation-delay: calc(0.1s * $i);
+            }
+        }
+
+        @include animation(loading-bar, (
+            (transform: scaleY(1)),
+            (transform: scaleY(2.5), opacity: 0.7),
+            (transform: scaleY(1)),
+            (transform: scaleY(1))
+        ));
+    }
+}
