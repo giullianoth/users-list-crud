@@ -3,7 +3,7 @@ import { findById } from "../app/model.js";
 import formArea from "./form-area.js";
 import modal from "./modal.js";
 
-async function updateUser() {
+const updateUser = async () => {
     const btnUpdateList = document.querySelectorAll(".j_edit_user") ?? null;
     const modalArea = document.querySelector(".j_modal");
 

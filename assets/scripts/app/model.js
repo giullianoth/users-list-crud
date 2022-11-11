@@ -8,7 +8,7 @@ const create = (data) => {
 }
 
 // READ
-async function read() {
+const read = async () => {
     let data = null;
     let dbRef = ref(database);
 
@@ -23,7 +23,7 @@ async function read() {
     return data;
 }
 
-async function findById(id) {
+const findById = async () => {
     let data = null;
     let dbRef = ref(database);
 

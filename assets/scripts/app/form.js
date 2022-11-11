@@ -1,10 +1,9 @@
 import { fade } from "../theme/effects.js";
-import formArea from "../theme/form-area.js";
 import showUsers from "../theme/show-users.js";
 import { create, updt } from "./model.js";
 import userList from "./user-list.js";
 
-async function form() {
+const form = async () => {
 
     const formCreate = document.querySelector(".j_form") ?? null;
     formCreate.querySelector("#user_name").focus();

@@ -34,7 +34,7 @@ const createUserElement = (data) => {
     return user;
 }
 
-async function showUsers() {
+const showUsers = async () => {
 
     let emptyArea = document.querySelector(".j_empty");
     let countArea = document.querySelector(".j_count");
