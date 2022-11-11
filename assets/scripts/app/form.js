@@ -7,6 +7,7 @@ import userList from "./user-list.js";
 async function form() {
 
     const formCreate = document.querySelector(".j_form") ?? null;
+    formCreate.querySelector("#user_name").focus();
     
     if (formCreate) {
         formCreate.addEventListener("submit", async (event) => {

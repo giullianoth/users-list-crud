@@ -391,6 +391,7 @@ body.dark_theme h1, body.dark_theme h2 {
   width: 20px;
   height: 20px;
   border: 1px solid #FFF;
+  font-size: 0.8em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -453,6 +454,8 @@ body.dark_theme h1, body.dark_theme h2 {
   flex-wrap: wrap;
   gap: 10px;
   padding: 20px 12px;
+  max-height: 150px;
+  overflow: hidden;
   transition: all 0.4s ease 0s;
 }
 @media screen and (min-width: 900px) {

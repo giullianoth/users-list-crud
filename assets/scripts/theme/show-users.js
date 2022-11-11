@@ -9,6 +9,7 @@ import form from "../app/form.js";
 import loadingScreen from "./loading.js";
 import createUser from "./create-user.js";
 import selectUser from "./select-user.js";
+import { fade, slide } from "./effects.js";
 
 const usersListArea = document.querySelector(".j_list");
 const createBtn = document.querySelector(".j_create");
@@ -53,7 +54,10 @@ async function showUsers() {
     }).catch((error) => {
         console.log(error);
     }).finally(() => {
-        usersListArea.querySelector(".loading").parentNode.remove();
+        fade("out", usersListArea.querySelector(".loading").parentNode)
+        setTimeout(() => {
+            usersListArea.querySelector(".loading").parentNode.remove();
+        }, 400);
     })
 
     if (userList.length) {
@@ -62,7 +66,9 @@ async function showUsers() {
         }
 
         userList.forEach((user) => {
-            usersListArea.appendChild(createUserElement(user));
+            let userElement = createUserElement(user);
+            usersListArea.appendChild(userElement);
+            slide("down", userElement, "flex");
         })
     } else {
         usersListArea.appendChild(triggerArea("Não há usuários cadastrados."));
