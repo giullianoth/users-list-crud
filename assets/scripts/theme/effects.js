@@ -77,7 +77,7 @@ const slide = (mode, element, displayElement = "block") => {
 
     } else {
         element.style.transition = "";
-        console.error(`Error: Mode ${mode} is not compatible to fade.`);
+        console.error(`Error: Mode ${mode} is not compatible to slide.`);
     }
 }
 
