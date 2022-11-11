@@ -23,7 +23,7 @@ const read = async () => {
     return data;
 }
 
-const findById = async () => {
+const findById = async (id) => {
     let data = null;
     let dbRef = ref(database);
 
