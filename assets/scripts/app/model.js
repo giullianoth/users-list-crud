@@ -1,7 +1,7 @@
 import { child, get, ref, set, update, remove, database } from "../firebase/connect.js";
 
 // CREATE
-const create = (data) => {
+const create = async (data) => {
     set(ref(database, `users/${data.user_id}`), data)
         .then(() => { console.log("Success"); })
         .catch((error) => { console.log(error); })
@@ -41,14 +41,14 @@ const findById = async (id) => {
 }
 
 // UPDATE
-const updt = (data) => {
+const updt = async (data) => {
     update(ref(database, `users/${data.user_id}`), data)
         .then(() => { console.log("Success"); })
         .catch((error) => { console.log(error); })
 }
 
 // DELETE
-const del = (data) => {
+const del = async (data) => {
     remove(ref(database, `users/${data.user_id}`))
         .then(() => { console.log("Success"); })
         .catch((error) => { console.log(error); })
