@@ -1,3 +1,6 @@
+// require('dotenv').config()
+// console.log(process.env)
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
 import { getDatabase, ref, set, get, child, update, remove } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
@@ -11,12 +14,12 @@ try {
     
         // Your web app's Firebase configuration
         const firebaseConfig = {
-            apiKey: "",
-            authDomain: "",
-            projectId: "",
-            storageBucket: "",
-            messagingSenderId: "",
-            appId: ""
+            apiKey: process.env.FIREBASE_API_KEY,
+            authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+            projectId: process.env.FIREBASE_PROJECT_ID,
+            storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+            messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+            appId: process.env.FIREBASE_APP_ID
         };
     
         // Initialize Firebase
